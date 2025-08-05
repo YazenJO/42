@@ -30,4 +30,5 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 #endif

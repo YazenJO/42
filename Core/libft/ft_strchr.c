@@ -34,17 +34,18 @@ char	*ft_strchr(const char *s, int c)
 
 /*
 #include <stdio.h>
-int main(void)
+
+int	main(void)
 {
-    const char *str = "Hello, World!";
-    int c = 'o';
-    char *result;
+	const char *str = "Hello, World!";
+	int c = 'o';
+	char *result;
 
-    result = strchr(str, c);
-    if (result != NULL)
-        printf("First occurrence of '%c': %s\n", c, result);
-    else
-        printf("Character '%c' not found in the string.\n", c);
+	result = ft_strchr(str, c);
+	if (result != NULL)
+		printf("First occurrence of '%c': %s\n", c, result);
+	else
+		printf("Character '%c' not found in the string.\n", c);
 
-    return 0;
+	return (0);
 }*/

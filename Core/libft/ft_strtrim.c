@@ -6,14 +6,14 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 15:23:02 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/05 23:36:12 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/07 22:46:24 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)//ABCD  ---ABYAzenCD--
-{																2 8
+char	*ft_strtrim(char const *s1, char const *set)
+{
 	size_t	start;
 	size_t	end;
 	size_t	len;
@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)//ABCD  ---ABYAzenCD--
 	if (!s1 || !set)
 		return (NULL);
 	start = 0;
-	while (s1[start] && ft_strchr(set, s1[start]))// 
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	end = ft_strlen(s1);
 	while (end > start && ft_strchr(set, s1[end - 1]))

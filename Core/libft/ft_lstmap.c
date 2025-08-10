@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 21:34:25 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/10 21:34:25 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/10 22:06:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new_list);
 }
 
+/*
 #include "stdio.h"
 
 void	print_list(t_list *lst)
@@ -79,3 +80,4 @@ int	main(void)
 	print_list(mapped_list);
 	return (0);
 }
+*/

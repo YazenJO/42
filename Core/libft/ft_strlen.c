@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 19:04:46 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/02 19:04:46 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/19 15:36:13 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *s)
 	size_t	length;
 
 	length = 0;
-	if (!s)
-		return (0);
 	while (s[length] != '\0')
 	{
 		length++;

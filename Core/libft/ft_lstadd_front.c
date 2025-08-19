@@ -6,18 +6,16 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 20:16:07 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/10 20:16:07 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/12 13:02:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new) //**lst  */
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*new_node;
-
-	new_node = ft_lstnew(new->content);
-	if (!new_node)
+	if (!new)
 		return ;
-	new_node->next = *lst;
+	new->next = *lst;
+	*lst = new;
 }

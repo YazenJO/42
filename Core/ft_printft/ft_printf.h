@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 10:12:08 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/23 13:36:03 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/23 16:17:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ size_t	ft_hexlen(unsigned long n);
 // Flag handling functions from ft_flags_util.c
 void	ft_charcase(va_list args, int *count);
 void	ft_numcase(va_list args, int *count);
-void	ft_hexcase(va_list args, int *count);
+void	ft_unumcase(va_list args, int *count);
+void	ft_hexcase(va_list args, int *count, char flag);
 void	ft_strcase(va_list args, int *count);
 
 // Flag handling functions from ft_flags_util2.c

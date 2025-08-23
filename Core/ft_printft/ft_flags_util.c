@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flags_util.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yazan <yazan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 12:29:17 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/23 14:46:38 by yazan            ###   ########.fr       */
+/*   Updated: 2025/08/23 16:15:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,27 @@ void	ft_numcase(va_list args, int *count)
 
 	num = va_arg(args, int);
 	ft_putnbr_fd(num, 1);
+	if (num < 0)
+		*count = ft_numlen(-num) + 1;
+	else
+		*count = ft_numlen(num);
+}
+
+void	ft_unumcase(va_list args, int *count)
+{
+	unsigned int	num;
+
+	num = va_arg(args, unsigned int);
+	ft_putnbr(num, 1);
 	*count = ft_numlen(num);
 }
 
-void	ft_hexcase(va_list args, int *count)
+void	ft_hexcase(va_list args, int *count, char flag)
 {
 	unsigned int	hex;
 
 	hex = va_arg(args, unsigned int);
-	ft_puthex(hex, 'x');
+	ft_puthex(hex, flag);
 	*count = ft_hexlen(hex);
 }
 

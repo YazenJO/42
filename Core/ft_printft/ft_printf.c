@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yazan <yazan@student.42.fr>                +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 10:12:05 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/23 14:23:52 by yazan            ###   ########.fr       */
+/*   Updated: 2025/08/23 16:17:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ int	ft_flag(char flag, va_list args)
 	else if (flag == '%')
 		ft_percentcase(&count);
 	else if (flag == 'u')
-		ft_numcase(args, &count);
+		ft_unumcase(args, &count);
 	else if (flag == 'x' || flag == 'X')
-		ft_hexcase(args, &count);
+		ft_hexcase(args, &count, flag);
 	else if (flag == 'p')
 		ft_ptrcase(args, &count);
 	return (count);

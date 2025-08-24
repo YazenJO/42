@@ -21,12 +21,13 @@
 
 // Main printf functions
 int		ft_printf(const char *format, ...);
-void    ft_printfutil(const char * format, va_list args, int *count);
+void	ft_printfutil(const char *format, va_list args, int *count);
 int		ft_flag(char flag, va_list args);
 
 // Printf utility helper functions
-void    ft_handle_regular_char(char c, int *count);
-int     ft_handle_format_specifier(const char *format, va_list args, int *count, int *i);
+void	ft_handle_regular_char(char c, int *count);
+int		ft_handle_format_specifier(const char *format, va_list args, int *count,
+			int *i);
 
 // Utility functions from ft_utils.c
 void	ft_putnbr(unsigned int n, int fd);
@@ -52,10 +53,10 @@ void	ft_percentcase(int *count);
 // Input validation functions
 int		ft_validate_pointer(void *ptr);
 
-//left alignment
+// left alignment
 void	ft_leftaligncase(const char *flag, va_list args, int *count);
-void    ft_putnchar(char c, int n);
-int     ft_handle_left_align(const char *format, va_list args, int *count, int *i);
-
+void	ft_putnchar(char c, int n);
+int		ft_handle_left_align(const char *format, va_list args, int *count,
+			int *i);
 
 #endif

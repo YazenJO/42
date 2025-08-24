@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yazan <yazan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 10:45:34 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/23 16:11:42 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/23 17:58:06 by yazan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_putnbr(unsigned int n, int fd)
 {
-	if (n >= 10)
-		ft_putnbr(n / 10, fd);
-	ft_putchar_fd((n % 10) + '0', fd);
+	unsigned long	nb;
+
+	nb = n;
+	if (nb >= 10)
+		ft_putnbr(nb / 10, fd);
+	ft_putchar_fd((nb % 10) + '0', fd);
 }
 
 size_t	ft_numlen(unsigned int n)

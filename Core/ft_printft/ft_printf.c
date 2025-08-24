@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 10:12:05 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/23 16:17:00 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/24 14:36:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,10 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int		i;
 	int		count;
 
-	i = 0;
-	count = 0;
-	va_start(args, format);
-	while (format[i])
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			count += ft_flag(format[i], args);
-		}
-		else
-		{
-			ft_putchar_fd(format[i], 1);
-			count++;
-		}
-		i++;
-	}
+	va_start(args, format); 
+	ft_printfutil(format, args, &count);
 	va_end(args);
 	return (count);
 }

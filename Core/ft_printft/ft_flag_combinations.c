@@ -27,7 +27,8 @@ int	ft_parse_flags(const char *format, int *i, int *left_align, int *zero_pad)
 	return (*left_align || *zero_pad);
 }
 
-int	ft_handle_combined_flags(const char *format, va_list args, int *count, int *i)
+int	ft_handle_combined_flags(const char *format, va_list args, int *count,
+		int *i)
 {
 	int	left_align;
 	int	zero_pad;

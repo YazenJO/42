@@ -12,39 +12,33 @@
 
 #include "ft_printf.h"
 
-void	ft_handle_regular_char(char c, int *count)
+void    ft_handle_regular_char(char c, int *count)
 {
-	ft_putchar_fd(c, 1);
-	(*count)++;
+    ft_putchar_fd(c, 1);
+    (*count)++;
 }
 
-int	ft_handle_format_specifier(const char *format, va_list args, int *count,
-		int *i)
+int     ft_handle_format_specifier(const char *format, va_list args, int *count, int *i)
 {
-	(*i)++;
-	if (format[*i] == '-')
-	{
-		ft_handle_left_align(format, args, count, i);
-		return (1);
-	}
-	else
-	{
-		*count += ft_flag(format[*i], args);
-		return (0);
-	}
+    (*i)++; 
+    if (ft_handle_combined_flags(format, args, count, i))
+        return (1);
+    
+    *count += ft_flag(format[*i], args);
+    return (0);
 }
 
-void	ft_printfutil(const char *format, va_list args, int *count)
+void    ft_printfutil(const char * format, va_list args, int *count)
 {
-	int	i;
+    int     i;
 
-	i = 0;
-	while (format[i])
+    i = 0;
+    while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			if (ft_handle_format_specifier(format, args, count, &i))
-				continue ;
+			if(ft_handle_format_specifier(format, args, count, &i))
+                continue; 
 		}
 		else
 			ft_handle_regular_char(format[i], count);

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 10:12:08 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/24 18:18:33 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/26 17:53:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,11 @@ void	ft_leftaligncase(const char *flag, va_list args, int *count);
 void	ft_putnchar(char c, int n);
 int		ft_handle_left_align(const char *format, va_list args, int *count,
 			int *i);
+//pad zero
+void	ft_pad_zero(const char *format, va_list args, int *count);
+int     ft_handle_pad_zero(const char *format, va_list args, int *count, int *i);
 
+// flag combinations
+int		ft_parse_flags(const char *format, int *i, int *left_align, int *zero_pad);
+int		ft_handle_combined_flags(const char *format, va_list args, int *count, int *i);
 #endif

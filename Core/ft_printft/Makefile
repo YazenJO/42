@@ -32,7 +32,9 @@ fclean: clean
 
 re: fclean all
 
+bonus: $(NAME)
+
 test: $(NAME)
 	$(CC) $(CFLAGS) main.c -L. -lftprintf -o test
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re test bonus

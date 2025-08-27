@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 10:12:08 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/26 19:54:13 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/27 14:26:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ int		ft_validate_pointer(void *ptr);
 void	ft_leftaligncase(const char *flag, va_list args, int *count);
 void	ft_putnchar(char c, int n);
 int		ft_handle_left_align(const char *format, va_list args, int *count,
+			int *i);
+// right alignment
+int		ft_handle_right_align(const char *format, va_list args, int *count,
 			int *i);
 // pad zero
 void	ft_pad_zero(const char *format, va_list args, int *count);

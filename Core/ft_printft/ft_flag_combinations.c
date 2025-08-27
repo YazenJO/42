@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_combinations.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: yazan <yazan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 15:45:00 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/26 15:45:00 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/27 16:50:53 by yazan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	ft_parse_flags(const char *format, int *i, int *left_align, int *zero_pad)
 			*zero_pad = 1;
 		(*i)++;
 	}
+	if (format[*i] >= '1' && format[*i] <= '9')
+		return (1);
 	return (*left_align || *zero_pad);
 }
 
@@ -45,6 +47,11 @@ int	ft_handle_combined_flags(const char *format, va_list args, int *count,
 	{
 		(*i)--;
 		ft_handle_pad_zero(format, args, count, i);
+		return (1);
+	}
+	else if (format[*i] >= '1' && format[*i] <= '9')
+	{
+		ft_handle_right_align(format, args, count, i);
 		return (1);
 	}
 	return (0);

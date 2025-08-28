@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_utils.c ft_flags_util.c ft_flags_util2.c ft_putptr.c  ft_leftalign.c ft_printfutil.c ft_pad_zero.c ft_flag_combinations.c ft_pad_zero_util.c
+SRC = ft_printf.c ft_utils.c ft_flags_util.c ft_flags_util2.c ft_putptr.c  ft_leftalign.c ft_printfutil.c ft_pad_zero.c ft_flag_combinations.c ft_pad_zero_util.c ft_rightalign.c
 
 OBJ = $(SRC:.c=.o)
 

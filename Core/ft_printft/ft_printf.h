@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 10:12:08 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/27 14:26:36 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/28 15:53:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,12 @@ int		ft_handle_pad_zero(const char *format, va_list args, int *count,
 int		ft_get_hex_ptr_length(char specifier, va_list args);
 int		ft_get_num_length(char specifier, va_list args);
 int		ft_calculate_content_length(char specifier, va_list args);
+void	ft_neg_padding(va_list args, int *count, int zeros_needed);
 
 // flag combinations
 int		ft_parse_flags(const char *format, int *i, int *left_align,
 			int *zero_pad);
 int		ft_handle_combined_flags(const char *format, va_list args, int *count,
 			int *i);
+
 #endif

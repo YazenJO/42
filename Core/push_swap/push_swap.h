@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazan <yazan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 21:03:05 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/25 12:39:02 by yazan            ###   ########.fr       */
+/*   Created: 2025/09/28 16:42:00 by marvin            #+#    #+#             */
+/*   Updated: 2025/09/28 19:34:20 by yazan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*last;
+# include "ft_printft/ft_printf.h"
+# include "ft_printft/libft/libft.h"
+# include <limits.h>
 
-	if (!new)
-		return ;
-	last = ft_lstlast(*lst);
-	if (last)
-		last->next = new;
-	else
-		*lst = new;
-}
+int		validate_input(int argc, char **argv);
+void	print_error(void);
+int		*ft_parse_input(int argc, char **argv);
+int		ft_isspace(int c);
+int		isdigits(char *str);
+int		count_numbers_from_args(int argc, char **argv);
+int		count_numbers(char *str);
+
+#endif

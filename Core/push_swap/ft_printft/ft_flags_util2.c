@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_flags_util2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazan <yazan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 21:03:05 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/25 12:39:02 by yazan            ###   ########.fr       */
+/*   Created: 2025/08/23 12:32:36 by marvin            #+#    #+#             */
+/*   Updated: 2025/08/23 14:37:30 by yazan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_ptrcase(va_list args, int *count)
 {
-	t_list	*last;
+	void	*ptr;
 
-	if (!new)
+	ptr = va_arg(args, void *);
+	if (!ptr)
+	{
+		ft_putstr_fd("(nil)", 1);
+		*count = 5;
 		return ;
-	last = ft_lstlast(*lst);
-	if (last)
-		last->next = new;
-	else
-		*lst = new;
+	}
+	ft_putptr((unsigned long *)ptr);
+	*count = 2 + ft_hexlen((unsigned long)ptr);
+}
+
+void	ft_percentcase(int *count)
+{
+	ft_putchar_fd('%', 1);
+	*count = 1;
 }

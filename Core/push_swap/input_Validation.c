@@ -6,7 +6,7 @@
 /*   By: yazan <yazan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/27 20:53:41 by marvin            #+#    #+#             */
-/*   Updated: 2025/09/29 00:33:35 by yazan            ###   ########.fr       */
+/*   Updated: 2025/09/29 00:45:06 by yazan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ static char	*convert_to_one_string(char **argv)
 	int		i;
 	char	*result;
 	char	*temp;
+	char	*temp_with_space;
 
 	i = 1;
 	result = ft_strdup("");
@@ -80,6 +81,14 @@ static char	*convert_to_one_string(char **argv)
 		return (NULL);
 	while (argv[i])
 	{
+		if (i > 1)
+		{
+			temp_with_space = ft_strjoin(result, " ");
+			free(result);
+			if (!temp_with_space)
+				return (NULL);
+			result = temp_with_space;
+		}
 		temp = ft_strjoin(result, argv[i]);
 		free(result);
 		if (!temp)
@@ -88,6 +97,46 @@ static char	*convert_to_one_string(char **argv)
 		i++;
 	}
 	return (result);
+}
+
+static int	check_duplicates(char *numbers)
+{
+	int		*nums;
+	int		count;
+	int		i;
+	int		j;
+
+	count = count_numbers(numbers);
+	nums = malloc(sizeof(int) * count);
+	if (!nums)
+		return (0);
+	i = 0;
+	j = 0;
+	while (numbers[i] && j < count)
+	{
+		while (numbers[i] && ft_isspace(numbers[i]))
+			i++;
+		if (numbers[i] && (ft_isdigit(numbers[i]) || numbers[i] == '-' || numbers[i] == '+'))
+		{
+			nums[j] = ft_atoi(&numbers[i]);
+			while (numbers[i] && !ft_isspace(numbers[i]))
+				i++;
+			j++;
+		}
+	}
+	i = 0;
+	while (i < count)
+	{
+		j = i + 1;
+		while (j < count)
+		{
+			if (nums[i] == nums[j])
+				return (free(nums), 0);
+			j++;
+		}
+		i++;
+	}
+	return (free(nums), 1);
 }
 
 int	validate_input(int argc, char **argv)
@@ -104,9 +153,8 @@ int	validate_input(int argc, char **argv)
 	}
 	else
 		numbers = ft_strdup(argv[1]);
-	if (!(isdigits(numbers) && ft_spaces_validation(numbers)))
-	{
-		return (ft_printf("Error\n"), 0);
-	}
+	if (!(isdigits(numbers) && ft_spaces_validation(numbers) && check_duplicates(numbers)))
+        return (free(numbers),ft_printf("Error\n"), 0);
+
 	return (1);
 }

@@ -1,7 +1,7 @@
 
 NAME = push_swap
 
-SRC = main.c push_swap.c input_Validation.c parsing_input.c 
+SRC = main.c push_swap.c input_Validation.c parsing_input.c input_validation_utils.c
 OBJ = $(SRC:.c=.o)
 
 FT_PRINTF_DIR = ft_printft

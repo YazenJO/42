@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   input_validation_utils.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yazan <yazan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/28 16:42:00 by marvin            #+#    #+#             */
-/*   Updated: 2025/09/29 00:54:39 by yazan            ###   ########.fr       */
+/*   Created: 2025/09/29 00:42:32 by yazan             #+#    #+#             */
+/*   Updated: 2025/09/29 00:54:43 by yazan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
+static int check_duplicates(char *numbers)
+{
+    int i;
+    int j;
 
-# include "ft_printft/ft_printf.h"
-# include "ft_printft/libft/libft.h"
-# include <limits.h>
-
-
-int		validate_input(int argc, char **argv);
-void	print_error(void);
-int		*ft_parse_input(int argc, char **argv);
-int		ft_isspace(int c);
-int		isdigits(char *str);
-int		count_numbers_from_args(int argc, char **argv);
-int		count_numbers(char *str);
-
-#endif
+    i = 0;
+    while (numbers[i])
+    {
+        if (ft_strchr(&numbers[i + 1], numbers[i]))
+            return (1);
+        i++;
+    }
+    return (0);
+}

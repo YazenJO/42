@@ -6,11 +6,11 @@
 /*   By: yabusher <yazenbilal2005@gmail.com>       #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/09/23 21:24:26 by yabusher         #+#    #+#              */
-/*   Updated: 2026/09/23 22:14:25 by yabusher        ###   ########.fr        */
+/*   Updated: 2026/09/30 16:38:24 by yabusher        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libtf.h"
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

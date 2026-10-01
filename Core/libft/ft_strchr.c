@@ -31,21 +31,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	const char *str = "Hello, World!";
-	int c = 'o';
-	char *result;
-
-	result = ft_strchr(str, c);
-	if (result != NULL)
-		printf("First occurrence of '%c': %s\n", c, result);
-	else
-		printf("Character '%c' not found in the string.\n", c);
-
-	return (0);
-}*/

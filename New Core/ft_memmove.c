@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_strtrim.c                                      :+:      :+:    :+:    */
+/*   ft_memmove.c                                      :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: yabusher <yazenbilal2005@gmail.com>       #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2025/08/05 15:23:02 by yabusher         #+#    #+#              */
-/*   Updated: 2026/09/30 20:35:21 by yabusher        ###   ########.fr        */
+/*   Created: 2026/09/24 23:46:42 by yabusher         #+#    #+#              */
+/*   Updated: 2026/09/26 20:10:16 by yabusher        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	start;
-	size_t	end;
-	size_t	len;
-	char	*trimmed;
+	unsigned char		*dest_char;
+	const unsigned char	*src_char;
 
-	if (!s1 || !set)
+	if (!dest && !src)
 		return (NULL);
-	start = 0;
-	while (s1[start] && ft_strchr(set, s1[start]))
-		start++;
-	end = ft_strlen(s1);
-	while (end > start && ft_strchr(set, s1[end - 1]))
-		end--;
-	len = end - start + 1;
-	trimmed = (char *) malloc(len);
-	if (!trimmed)
-		return (NULL);
-	ft_strlcpy(trimmed, &s1[start], len);
-	return (trimmed);
+	if (dest < src)
+		return (ft_memcpy(dest, src, n));
+	src_char = (unsigned char *) src;
+	dest_char = (unsigned char *) dest;
+	while (n > 0)
+	{
+		dest_char[n - 1] = src_char[n - 1];
+		n--;
+	}
+	return (dest);
 }

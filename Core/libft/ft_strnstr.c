@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/03 14:39:29 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/08 17:28:56 by marvin           ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_strnstr.c                                      :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: yabusher <yazenbilal2005@gmail.com>       #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2025/08/03 14:39:29 by yabusher         #+#    #+#              */
+/*   Updated: 2026/09/26 21:44:03 by yabusher        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* [1] function locates the first
-	occurrence of the  null-terminated
-		string little in the string big*/
-// [2] where not more than len characters are searched
-// [3] Characters that appear after	a `\0'	character  are not  searched
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -26,11 +20,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	little_len = ft_strlen(little);
 	if (little[0] == '\0')
-		return ((char *)big);
+		return ((char *) big);
 	while (big[i] && i + little_len <= len)
 	{
 		if (ft_strncmp(&big[i], little, little_len) == 0)
-			return ((char *)&big[i]);
+			return ((char *) & big[i]);
 		i++;
 	}
 	return (NULL);

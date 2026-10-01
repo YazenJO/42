@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_toupper.c                                      :+:      :+:    :+:    */
+/*   ft_strncmp.c                                      :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: yabusher <yazenbilal2005@gmail.com>       #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2025/08/02 19:03:38 by yabusher         #+#    #+#              */
-/*   Updated: 2026/09/26 20:32:46 by yabusher        ###   ########.fr        */
+/*   Created: 2026/09/24 16:56:35 by yabusher         #+#    #+#              */
+/*   Updated: 2026/09/24 22:46:11 by yabusher        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	size_t	i;
+
+	if (n == 0)
+		return (0);
+	i = 0;
+	while (i < n && (s1[i] || s2[i]))
+	{
+		if (s1[i] != s2[i])
+		{
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+		}
+		if (s1[i] == '\0')
+			return (0);
+		i++;
+	}
+	return (0);
 }

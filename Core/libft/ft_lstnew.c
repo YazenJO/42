@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/10 20:10:24 by marvin            #+#    #+#             */
-/*   Updated: 2025/08/10 20:10:24 by marvin           ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ft_lstnew.c                                       :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: yabusher <yazenbilal2005@gmail.com>       #+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2025/08/10 20:10:24 by yabusher         #+#    #+#              */
+/*   Updated: 2026/09/26 20:32:25 by yabusher        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
+	new_node = (t_list *) malloc(sizeof(t_list));
 	if (!new_node)
 		return (NULL);
 	new_node->content = content;

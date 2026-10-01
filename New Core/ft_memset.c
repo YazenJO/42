@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   ft_toupper.c                                      :+:      :+:    :+:    */
+/*   ft_memset.c                                       :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: yabusher <yazenbilal2005@gmail.com>       #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2025/08/02 19:03:38 by yabusher         #+#    #+#              */
-/*   Updated: 2026/09/26 20:32:46 by yabusher        ###   ########.fr        */
+/*   Created: 2026/09/24 23:22:44 by yabusher         #+#    #+#              */
+/*   Updated: 2026/09/24 23:41:24 by yabusher        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	unsigned char	*ptr;
+	size_t			i;
+
+	i = 0;
+	ptr = b;
+	while (len > 0)
+	{
+		ptr[i] = (unsigned char) c;
+		i++;
+		len--;
+	}
+	return (b);
 }

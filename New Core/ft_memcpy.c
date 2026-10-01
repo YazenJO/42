@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                       :::      ::::::::    */
-/*   libtf.h                                           :+:      :+:    :+:    */
+/*   ft_memcpy.c                                       :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
 /*   By: yabusher <yazenbilal2005@gmail.com>       #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/22 22:22:48 by yabusher         #+#    #+#              */
-/*   Updated: 2026/09/22 22:58:52 by yabusher        ###   ########.fr        */
+/*   Created: 2026/09/24 22:47:47 by yabusher         #+#    #+#              */
+/*   Updated: 2026/09/24 23:22:14 by yabusher        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBTF_H
-# define LIBTF_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t	i;
 
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-int	ft_isdigit(int c);
-int	ft_isalpha(int c);
-
-#endif
+	if (!dest && !src)
+		return (NULL);
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *) dest)[i] = ((unsigned char *) src)[i];
+		i++;
+	}
+	return (dest);
+}
